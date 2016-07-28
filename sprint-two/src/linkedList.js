@@ -43,7 +43,6 @@ var LinkedList = function() {
       }
       scanned = scanned.next;
       
-      console.log(seen);
     }
 
     return seen;
