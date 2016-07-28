@@ -57,13 +57,19 @@ Graph.prototype.forEachNode = function(cb) {
   for (var key in this) {
     if (typeof this[key] !== 'function') {
       cb(this[key].value);
-      console.log(this[key]);
     }
   }
 };
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ * addNode: O(1)
+ * contains: O(1)
+ * removeNode: O(n^2)
+ * hasEdge: O(n)
+ * removeEdge: O(n)
+ * forEachNode: O(n)
  */
+
 
 
