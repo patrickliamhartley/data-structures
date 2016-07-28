@@ -18,23 +18,35 @@ var LinkedList = function() {
   list.removeHead = function() {
     var temp = list.head.value;
     list.head = list.head.next;
-    console.log(list.tail);
-    console.log(list.head);
     return temp;
   };
 
   list.contains = function(target) {
-    var search = function(node) {     
-      if (node.value === target) {
-        return true;
-      }
-      if (node.next === null) {
+    // var search = function(node) {     
+    //   if (node.value === target) {
+    //     return true;
+    //   }
+    //   if (node.next === null) {
 
-        return false;
+    //     return false;
+    //   }
+    //   return search(node.next);
+    // };
+    // return search(list.head);
+    var scanned = list.head;
+    var seen = false;
+
+    while (scanned !== null) {
+      
+      if (scanned.value === target) {
+        seen = true;
       }
-      return search(node.next);
-    };
-    return search(list.head);
+      scanned = scanned.next;
+      
+      console.log(seen);
+    }
+
+    return seen;
   };
 
   return list;
