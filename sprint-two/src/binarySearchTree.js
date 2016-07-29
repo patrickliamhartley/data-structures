@@ -64,10 +64,20 @@ BinarySearchTree.methods.insert = function (val) {
   
 };
 
-BinarySearchTree.methods.contains = function (node) { 
+BinarySearchTree.methods.contains = function (val) { 
+
+  if (this.value < val && this.right) {
+    return this.right.contains(val);
+  } else if (this.value > val && this.left) {
+    return this.left.contains(val);
+  } else if (this.value === val) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
-BinarySearchTree.methods.depthFirstLog = function (node) { 
+BinarySearchTree.methods.depthFirstLog = function (cb) { 
 };
 
 /*
