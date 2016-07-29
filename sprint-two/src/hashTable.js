@@ -40,7 +40,7 @@ HashTable.prototype.remove = function(k) {
   var bucket = this._storage.get(index);
   for (var i = 0; i < bucket.length; i++) {
     if (bucket[i][0] === k) {
-      bucket[i][1] = undefined;
+      bucket[i].splice(0, 2);
     }
   }
 };
