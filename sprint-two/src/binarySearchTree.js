@@ -78,8 +78,18 @@ BinarySearchTree.methods.contains = function (val) {
 };
 
 BinarySearchTree.methods.depthFirstLog = function (cb) { 
+  cb.call(this, this.value);
+  if (this.left !== null) {
+    this.left.depthFirstLog(cb);
+  }
+  if (this.right !== null) {
+    this.right.depthFirstLog(cb);
+  }
 };
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ *insert = best case O(log(n)), worst case O(n)
+ *contains = best case O(log(n)), worst case O(n)
+ *depthFirstLog = O(n)
  */
