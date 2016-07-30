@@ -58,6 +58,7 @@ describe('doubleLinkedList', function() {
     linkedList.addToHead(10);
     expect(linkedList.contains(10)).to.equal(true);
     expect(linkedList.removeHead()).to.equal(10);
+    expect(linkedList.contains(10)).to.equal(false);
   });
 
   it('should have a removeTail() method which removes the last node from the list and returns its value', function() {
@@ -65,7 +66,7 @@ describe('doubleLinkedList', function() {
     linkedList.addToTail(1);
     linkedList.addToTail(2);
     linkedList.addToTail(3);
-    linkedList.removeTail();
+    expect(linkedList.removeTail()).to.equal(3);
     expect(linkedList.contains(3)).to.equal(false);
   });
 
